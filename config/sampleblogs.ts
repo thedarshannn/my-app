@@ -6,7 +6,6 @@ export interface Blog {
   description: string;
   content: string; // markdown content
   imageUrl: string;
-  link: string;
 }
 
 export const SampleBlogs: Blog[] = [
@@ -37,7 +36,6 @@ Happy coding!
     `,
     imageUrl:
       "https://images.unsplash.com/photo-1735405817208-79a2fd79e18b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/blogs/getting-started-nextjs",
   },
   {
     slug: "tailwindcss-for-beginners",
@@ -64,7 +62,6 @@ And that’s it — styled instantly!
     `,
     imageUrl:
       "https://images.unsplash.com/photo-1756049060197-37b4b52c3183?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/blogs/tailwindcss-for-beginners",
   },
   {
     slug: "why-shadcn-ui",
@@ -92,7 +89,6 @@ Now you can focus on **building apps**, not reinventing the wheel!
     `,
     imageUrl:
       "https://images.unsplash.com/photo-1518837695005-2083093ee35b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/blogs/why-shadcn-ui",
   },
 ];
 

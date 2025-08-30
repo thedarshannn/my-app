@@ -7,7 +7,6 @@ interface Blog {
   description: string;
   content: string;
   imageUrl: string;
-  link: string;
 }
 
 const BlogList: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
@@ -50,7 +49,7 @@ const BlogList: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
               </h2>
               <p className="text-gray-600 text-base mb-6">{blog.description}</p>
               <a
-                href={blog.link}
+                href={`/blogpost/${blog.slug}`}
                 className="text-indigo-600 hover:text-indigo-800 font-semibold text-lg inline-flex items-center group"
               >
                 Read More
