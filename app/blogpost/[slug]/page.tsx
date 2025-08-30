@@ -7,6 +7,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import { rehypePrettyCode } from "rehype-pretty-code";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
 import gray from "gray-matter";
 import fs from "fs";
 import Onthispage from "@/components/Onthispage";
@@ -26,7 +27,13 @@ export default async function BlogPage({
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypePrettyCode, {
-      theme: "github-dark",
+      theme: "material-theme-ocean",
+      transformers: [
+        transformerCopyButton({
+          visibility: "always",
+          feedbackDuration: 3_000,
+        }),
+      ],
     })
     .use(rehypeAutolinkHeadings)
     .use(rehypeStringify);
