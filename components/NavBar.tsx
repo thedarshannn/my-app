@@ -47,7 +47,9 @@ const NavBar = () => {
         backdrop-blur-xl flex items-center justify-between px-6"
       >
         {/* Logo */}
-        <div className="font-bold text-lg tracking-tight">darshan.dev</div>
+        <div className="font-bold text-lg tracking-tight">
+          <Link href="/">darshan.dev</Link>
+        </div>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center space-x-6">
