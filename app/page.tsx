@@ -50,11 +50,6 @@ export default function Home() {
           </CardContent>
         </Card>
       </section>
-
-      {/* Footer */}
-      <footer className="mt-24 text-sm text-gray-500">
-        © {new Date().getFullYear()} Darshan Prajapati. All rights reserved.
-      </footer>
     </main>
   );
 }
