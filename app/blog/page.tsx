@@ -1,4 +1,6 @@
 import React from "react";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import Image from "next/image";
 import { SampleBlogs } from "@/config/sampleblogs";
 
 interface Blog {
@@ -11,7 +13,7 @@ interface Blog {
 
 const BlogList: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <MaxWidthWrapper className="py-12">
       {/* Page Header */}
       <div className="mb-12 text-center">
         <h1 className="text-5xl font-extrabold tracking-tight">
@@ -33,11 +35,14 @@ const BlogList: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
           >
             {/* Blog Image */}
             <div className="lg:w-1/2 w-full">
-              <div className="w-full aspect-[16/10] overflow-hidden rounded-3xl shadow-lg">
-                <img
+              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-3xl shadow-lg">
+                <Image
                   src={blog.imageUrl}
                   alt={blog.title}
-                  className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+                  priority={index === 0}
                 />
               </div>
             </div>
@@ -61,7 +66,7 @@ const BlogList: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
           </div>
         ))}
       </div>
-    </div>
+    </MaxWidthWrapper>
   );
 };
 

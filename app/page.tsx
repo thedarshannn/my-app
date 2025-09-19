@@ -1,31 +1,79 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Highlighter } from "@/components/magicui/highlighter";
+import Image from "next/image";
+import Link from "next/link";
+import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import HomeCarousel from "@/components/HomeCarousel";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-gray-50 px-6">
-      {/* Hero Section */}
-      <section className="text-center max-w-2xl">
-        <h1 className="text-7xl font-bold tracking-tight text-gray-900">
-          Hi, I’m{" "}
-          <span className="text-indigo-600">
-            <Highlighter action="highlight" color="#87CEFA">
-              Darshan
-            </Highlighter>
-          </span>
-        </h1>
-        <p className="mt-4 text-lg text-gray-600">
-          A Computer Engineering graduate & aspiring Java Backend Developer,
-          passionate about building real-world impactful technology solutions.
-        </p>
-        <div className="mt-6 flex gap-4 justify-center">
-          <Button>View Projects</Button>
-          <Button variant="outline">Contact Me</Button>
+    <main className="min-h-screen">
+      <MaxWidthWrapper className="mt-24">
+        {/* Avatar */}
+        <div className="mb-8">
+          <Image
+            src="/vercel.svg"
+            alt="Profile avatar"
+            width={80}
+            height={80}
+            priority
+            className="h-20 w-20 rounded-full object-cover ring-1 ring-black/10 dark:ring-white/10"
+          />
         </div>
-      </section>
+
+        {/* Headline */}
+        <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">
+          Software designer, founder, and amateur astronaut.
+        </h1>
+
+        {/* Subtext */}
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+          I’m Spencer, a software designer and entrepreneur based in New York
+          City. I’m the founder and CEO of Planetaria, where we develop
+          technologies that empower regular people to explore space on their own
+          terms.
+        </p>
+
+        {/* Social row */}
+        <div className="mt-8 flex items-center gap-6">
+          <SocialLink href="#" label="X / Twitter">
+            <Twitter className="h-5 w-5" />
+          </SocialLink>
+          <SocialLink href="#" label="Instagram">
+            <Instagram className="h-5 w-5" />
+          </SocialLink>
+          <SocialLink href="#" label="GitHub">
+            <Github className="h-5 w-5" />
+          </SocialLink>
+          <SocialLink href="#" label="LinkedIn">
+            <Linkedin className="h-5 w-5" />
+          </SocialLink>
+        </div>
+      </MaxWidthWrapper>
+      <MaxWidthWrapper>
+        <HomeCarousel />
+      </MaxWidthWrapper>
     </main>
+  );
+}
+
+function SocialLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      aria-label={label}
+      className="text-foreground/60 transition-colors hover:text-foreground"
+    >
+      {children}
+    </Link>
   );
 }

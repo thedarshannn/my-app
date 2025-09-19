@@ -8,7 +8,13 @@ interface MaxWidthWrapperProps {
 
 const MaxWidthWrapper = ({ className, children }: MaxWidthWrapperProps) => {
   return (
-    <div className={cn("mx-auto max-w-screen-xl w-full my-12", className)}>
+    <div
+      className={cn(
+        // Center with a site-wide max width and responsive horizontal padding
+        "mx-auto w-full max-w-screen-xl px-6 md:px-8 my-12",
+        className
+      )}
+    >
       {children}
     </div>
   );
