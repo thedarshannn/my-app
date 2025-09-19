@@ -13,25 +13,29 @@ const images = [
 
 export default function HomeCarousel() {
   return (
-    <Carousel className="mt-12">
-      {images.map((src, idx) => (
-        <CarouselItem key={src}>
-          <div
-            className={
-              "relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/10 dark:ring-white/10 " +
-              (idx % 2 === 0 ? "rotate-[-3deg]" : "rotate-[2deg]")
-            }
-          >
-            <Image
-              src={src}
-              alt="Gallery image"
-              fill
-              sizes="(min-width: 1024px) 20vw, (min-width: 768px) 40vw, 80vw"
-              className="object-cover"
-            />
-          </div>
-        </CarouselItem>
-      ))}
-    </Carousel>
+    <div className="relative mt-8">
+      {/* soft gradient to separate hero from carousel on overlap */}
+      <div className="pointer-events-none absolute -top-6 left-0 right-0 h-12 bg-gradient-to-b from-background to-transparent" />
+      <Carousel>
+        {images.map((src, idx) => (
+          <CarouselItem key={src}>
+            <div
+              className={
+                "relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/10 dark:ring-white/10 will-change-transform " +
+                (idx % 2 === 0 ? "-rotate-3" : "rotate-2")
+              }
+            >
+              <Image
+                src={src}
+                alt="Gallery image"
+                fill
+                sizes="(min-width: 1024px) 20vw, (min-width: 800px) 40vw, 80vw"
+                className="object-cover"
+              />
+            </div>
+          </CarouselItem>
+        ))}
+      </Carousel>
+    </div>
   );
 }

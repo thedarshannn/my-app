@@ -28,8 +28,8 @@ export function Carousel({
   const [emblaRef] = useEmblaCarousel(options, plugins);
 
   return (
-    <div ref={emblaRef} className={cn("overflow-hidden", className)}>
-      <div className="flex -ml-4">{children}</div>
+    <div ref={emblaRef} className={cn("overflow-visible", className)}>
+      <div className="flex -ml-6">{children}</div>
     </div>
   );
 }
@@ -44,7 +44,7 @@ export function CarouselItem({
   return (
     <div
       className={cn(
-        "pl-4 flex-[0_0_80%] md:flex-[0_0_40%] lg:flex-[0_0_20%]",
+        "pl-6 flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_22%]",
         className
       )}
     >
