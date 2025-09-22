@@ -15,7 +15,7 @@ export default function Home() {
           {/* Avatar */}
           <div className="mb-8">
             <Image
-              src="/vercel.svg"
+              src="/hero.jpg"
               alt="Profile avatar"
               width={80}
               height={80}

@@ -5,7 +5,6 @@ import siteConfig from "../config/site";
 import NavBar from "../components/NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import CursorShadow from "@/components/CursorShadow";
-import EdgeGuides from "@/components/EdgeGuides";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +41,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavBar />
-          <EdgeGuides />
           {children}
         </ThemeProvider>
       </body>

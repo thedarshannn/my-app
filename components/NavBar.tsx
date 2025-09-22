@@ -5,9 +5,11 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ModeToggle } from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
+// Avatar and handoff logic removed from the navbar per request
 
 // New navigation to match the reference design
 const navLinks = [
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
   { name: "Projects", href: "/projects" },
@@ -25,12 +27,13 @@ const NavBar = () => {
     [0, 100],
     ["rgba(255,255,255,0.40)", "rgba(255,255,255,0.75)"]
   );
+  const toggleScale = useTransform(scrollY, [0, 120], [1, 0.9]);
 
   return (
     <>
       {/* Centered pill navigation */}
       <motion.div
-        className="fixed top-6 left-1/2 z-50 -translate-x-1/2"
+        className="fixed top-6 left-1/2 z-40 -translate-x-1/2"
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -63,10 +66,15 @@ const NavBar = () => {
         </div>
       </motion.div>
 
-      {/* Theme toggle top-right */}
-      <div className="fixed right-6 top-6 z-50">
+      {/* Navbar avatar removed per request */}
+
+      {/* Right theme toggle */}
+      <motion.div
+        className="fixed right-6 top-6 z-40"
+        style={{ scale: toggleScale }}
+      >
         <ModeToggle />
-      </div>
+      </motion.div>
 
       {/* Mobile full-screen menu */}
       {isOpen && (
@@ -74,7 +82,7 @@ const NavBar = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 bg-background/95 backdrop-blur-xl"
+          className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-8 bg-background/95 backdrop-blur-xl"
         >
           <button
             aria-label="Close navigation"
