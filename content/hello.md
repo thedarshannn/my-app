@@ -1,9 +1,10 @@
 ---
-title: Hello
-slug: home
-description: Welcome to my very first blog post! Here I’ll share my thoughts on building minimal and beautiful web portfolios.
-content: Welcome to my first blog post! This post introduces my blog and showcases how I structure content using Next.js and ShadCN components.
-imageUrl: https://source.unsplash.com/800x400/?blog,web
+title: "Hello"
+slug: "hello"
+description: "Welcome to my very first blog post! Here I’ll share my thoughts on building minimal and beautiful web portfolios."
+content: "Welcome to my first blog post! This post introduces my blog and showcases how I structure content using Next.js and ShadCN components."
+imageUrl: "https://source.unsplash.com/800x400/?blog,web"
+date: "2022-09-05"
 ---
 
 ## Welcome to My First Blog ✨

@@ -48,6 +48,15 @@ export default async function BlogPage({
           <h1 className="mb-6 text-4xl font-bold tracking-tight">
             {data.title}
           </h1>
+          {data.date && (
+            <p className="mb-6 text-sm text-muted-foreground">
+              {new Date(data.date).toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+          )}
           <div
             className="prose dark:prose-invert max-w-none leading-relaxed"
             dangerouslySetInnerHTML={{ __html: htmlContent }}

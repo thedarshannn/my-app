@@ -14,7 +14,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <DropdownMenu>
@@ -25,25 +30,36 @@ export function ModeToggle() {
           className="relative rounded-full border border-white/20 bg-white/30 dark:bg-black/30 backdrop-blur-md shadow-md hover:shadow-lg transition-all"
         >
           <AnimatePresence mode="wait" initial={false}>
-            {theme === "light" ? (
-              <motion.div
-                key="sun"
-                initial={{ rotate: -90, scale: 0 }}
-                animate={{ rotate: 0, scale: 1 }}
-                exit={{ rotate: 90, scale: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" />
-              </motion.div>
+            {mounted ? (
+              resolvedTheme === "light" ? (
+                <motion.div
+                  key="sun"
+                  initial={{ rotate: -90, scale: 0 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  exit={{ rotate: 90, scale: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-500" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="moon"
+                  initial={{ rotate: 90, scale: 0 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  exit={{ rotate: -90, scale: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Moon className="h-[1.2rem] w-[1.2rem] text-blue-400" />
+                </motion.div>
+              )
             ) : (
+              // Render a stable placeholder during SSR/first client render to avoid hydration mismatch
               <motion.div
-                key="moon"
-                initial={{ rotate: 90, scale: 0 }}
-                animate={{ rotate: 0, scale: 1 }}
-                exit={{ rotate: -90, scale: 0 }}
-                transition={{ duration: 0.3 }}
+                key="placeholder"
+                initial={false}
+                animate={{ opacity: 1 }}
               >
-                <Moon className="h-[1.2rem] w-[1.2rem] text-blue-400" />
+                <Sun className="h-[1.2rem] w-[1.2rem]" />
               </motion.div>
             )}
           </AnimatePresence>

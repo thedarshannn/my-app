@@ -5,6 +5,7 @@ import siteConfig from "../config/site";
 import NavBar from "../components/NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import CursorShadow from "@/components/CursorShadow";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-p-21" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         <CursorShadow />
         <ThemeProvider
@@ -42,6 +44,7 @@ export default function RootLayout({
         >
           <NavBar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

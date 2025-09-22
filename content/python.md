@@ -1,9 +1,10 @@
 ---
-title: Python Tutorial
-slug: python-tutorial
-description: Comprehensive guide on learning Python from basics to advanced topics.
-content: A comprehensive guide on learning Python from basics to advanced topics.
-imageUrl: https://source.unsplash.com/800x400/?blog,web
+title: "Python Tutorial"
+slug: "python-tutorial"
+description: "Comprehensive guide on learning Python from basics to advanced topics."
+content: "A comprehensive guide on learning Python from basics to advanced topics."
+imageUrl: "https://source.unsplash.com/800x400/?blog,web"
+date: "2022-07-14"
 ---
 
 Welcome to this comprehensive Python tutorial! Whether you're a complete beginner or looking to brush up on your Python skills, this guide will take you through the basics and gradually introduce advanced topics.
@@ -147,6 +148,7 @@ print(greet())  # Outputs: HELLO
 
 ```python
 # Example of a generator
+
 def count_up_to(max):
     count = 1
     while count <= max:

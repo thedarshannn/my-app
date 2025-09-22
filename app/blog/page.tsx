@@ -1,75 +1,106 @@
 import React from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import Image from "next/image";
-import { SampleBlogs } from "@/config/sampleblogs";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-interface Blog {
+type BlogFrontmatter = {
   slug: string;
   title: string;
   description: string;
-  content: string;
   imageUrl: string;
+  date: string; // ISO or YYYY-MM-DD
+};
+
+type BlogItem = BlogFrontmatter & { filepath: string };
+
+function getAllBlogs(): BlogItem[] {
+  const contentDir = path.join(process.cwd(), "content");
+  const files = fs.readdirSync(contentDir).filter((f) => f.endsWith(".md"));
+  const entries: BlogItem[] = files.map((filename) => {
+    const filepath = path.join(contentDir, filename);
+    const raw = fs.readFileSync(filepath, "utf-8");
+    const { data } = matter(raw);
+    return {
+      slug: data.slug || filename.replace(/\.md$/, ""),
+      title: data.title ?? "Untitled",
+      description: data.description ?? "",
+      imageUrl: data.imageUrl ?? "/vercel.svg",
+      date: data.date ?? "1970-01-01",
+      filepath,
+    };
+  });
+  // Sort by date desc
+  return entries.sort((a, b) => +new Date(b.date) - +new Date(a.date));
 }
 
-const BlogList: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
+function formatDate(d: string) {
+  try {
+    return new Date(d).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC",
+    });
+  } catch {
+    return d;
+  }
+}
+
+export default function BlogPage() {
+  const blogs = getAllBlogs();
   return (
     <MaxWidthWrapper className="py-12">
-      {/* Page Header */}
-      <div className="mb-12 text-center">
-        <h1 className="text-5xl font-extrabold tracking-tight">
-          ✍️ My Thoughts
-        </h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          A collection of things I’ve been writing, learning, and exploring.
-        </p>
+      {/* Header aligned with content column */}
+      <div className="mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <div className="hidden md:block md:col-span-3" />
+          <div className="md:col-span-9">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+              Writing on software design, company building, and the aerospace
+              industry.
+            </h1>
+            <p className="mt-4 text-muted-foreground max-w-2xl">
+              All of my long-form thoughts on programming, leadership, product
+              design, and more, collected in chronological order.
+            </p>
+          </div>
+        </div>
       </div>
 
-      {/* Blog List */}
-      <div className="space-y-16">
-        {blogs.map((blog, index) => (
-          <div
-            key={blog.slug}
-            className={`flex flex-col lg:flex-row items-center gap-8 ${
-              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-            }`}
-          >
-            {/* Blog Image */}
-            <div className="lg:w-1/2 w-full">
-              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-3xl shadow-lg">
-                <Image
-                  src={blog.imageUrl}
-                  alt={blog.title}
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-300 hover:scale-[1.02]"
-                  priority={index === 0}
-                />
+      {/* List */}
+      <div className="space-y-10">
+        {blogs.map((blog) => (
+          <article key={blog.slug} className="">
+            <div className="grid grid-cols-1 md:grid-cols-12 md:items-stretch gap-4">
+              {/* Date left with vertical guide line */}
+              <div className="md:col-span-3 text-sm text-muted-foreground md:text-left md:pl-6 md:pt-6 md:border-l md:border-border">
+                <time dateTime={blog.date}>{formatDate(blog.date)}</time>
+              </div>
+
+              {/* Content right as hoverable card */}
+              <div className="md:col-span-9">
+                <a
+                  href={`/blogpost/${blog.slug}`}
+                  className="group block h-full rounded-2xl border border-transparent p-6 transition-colors hover:border-border hover:bg-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <h2 className="text-xl md:text-2xl font-semibold">
+                    {blog.title}
+                  </h2>
+                  <p className="mt-2 text-muted-foreground">
+                    {blog.description}
+                  </p>
+                  <div className="mt-3">
+                    <span className="text-primary inline-flex items-center gap-1 hover:underline underline-offset-4 transition-transform group-hover:translate-x-0.5">
+                      Read article <span aria-hidden>›</span>
+                    </span>
+                  </div>
+                </a>
               </div>
             </div>
-
-            {/* Blog Content */}
-            <div className="lg:w-1/2 w-full">
-              <h2 className="text-4xl font-bold mb-3 leading-snug">
-                {blog.title}
-              </h2>
-              <p className="text-gray-600 text-base mb-6">{blog.description}</p>
-              <a
-                href={`/blogpost/${blog.slug}`}
-                className="text-indigo-600 hover:text-indigo-800 font-semibold text-lg inline-flex items-center group"
-              >
-                Read More
-                <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </a>
-            </div>
-          </div>
+          </article>
         ))}
       </div>
     </MaxWidthWrapper>
   );
-};
-
-export default function BlogPage() {
-  return <BlogList blogs={SampleBlogs} />;
 }
