@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import HomeCarousel from "@/components/HomeCarousel";
+import profile from "@/config/profile";
+import ProjectsSection from "@/components/ProjectsSection";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -24,8 +26,8 @@ export default function Home() {
           {/* Avatar */}
           <div className="mb-8">
             <Image
-              src="/hero.jpg"
-              alt="Profile avatar"
+              src={profile.avatar || "/hero.jpg"}
+              alt={`${profile.name} avatar`}
               width={80}
               height={80}
               priority
@@ -33,33 +35,26 @@ export default function Home() {
             />
           </div>
 
-          {/* Headline (slightly smaller for a cleaner feel) */}
+          {/* Headline from profile */}
           <h1 className="max-w-4xl text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl">
-            Software designer, founder, and amateur astronaut.
+            {profile.slogan}
           </h1>
 
-          {/* Subtext */}
+          {/* Subtext from profile.bio[0] */}
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            {profile.bio[0]}
           </p>
 
           {/* Social row */}
           <div className="mt-8 flex items-center gap-6">
-            <SocialLink href="#" label="X / Twitter">
-              <Twitter className="h-5 w-5" />
-            </SocialLink>
-            <SocialLink href="#" label="Instagram">
-              <Instagram className="h-5 w-5" />
-            </SocialLink>
-            <SocialLink href="#" label="GitHub">
-              <Github className="h-5 w-5" />
-            </SocialLink>
-            <SocialLink href="#" label="LinkedIn">
-              <Linkedin className="h-5 w-5" />
-            </SocialLink>
+            {profile.socials.map((s) => (
+              <SocialLink key={s.label} href={s.href} label={s.label}>
+                {s.icon === "twitter" && <Twitter className="h-5 w-5" />}
+                {s.icon === "instagram" && <Instagram className="h-5 w-5" />}
+                {s.icon === "github" && <Github className="h-5 w-5" />}
+                {s.icon === "linkedin" && <Linkedin className="h-5 w-5" />}
+              </SocialLink>
+            ))}
           </div>
         </div>
       </MaxWidthWrapper>
@@ -119,29 +114,38 @@ export default function Home() {
                     Work
                   </div>
                   <ol className="mt-6 space-y-5">
-                    {workItems.map((item) => (
-                      <li
-                        key={item.company}
-                        className="flex items-start justify-between gap-4"
-                      >
-                        <div>
-                          <div className="font-medium leading-tight">
-                            {item.company}
+                    {(profile.experience || workItems).map((item) => {
+                      const dateLabel =
+                        "dates" in item
+                          ? item.dates
+                          : `${item.start} — ${item.end}`;
+                      const key = `${item.company}-${item.role}-${dateLabel}`;
+                      return (
+                        <li
+                          key={key}
+                          className="flex items-start justify-between gap-4"
+                        >
+                          <div>
+                            <div className="font-medium leading-tight">
+                              {item.company}
+                            </div>
+                            <div className="text-sm text-muted-foreground">
+                              {item.role}
+                            </div>
                           </div>
-                          <div className="text-sm text-muted-foreground">
-                            {item.role}
+                          <div className="text-sm text-muted-foreground whitespace-nowrap">
+                            {dateLabel}
                           </div>
-                        </div>
-                        <div className="text-sm text-muted-foreground whitespace-nowrap">
-                          {item.dates}
-                        </div>
-                      </li>
-                    ))}
+                        </li>
+                      );
+                    })}
                   </ol>
                   <div className="mt-6">
                     <a
-                      href="#"
+                      href={profile.resumePath || "/Resume.pdf"}
                       className="inline-flex w-full items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm hover:bg-accent/40"
+                      target="_blank"
+                      rel="noreferrer noopener"
                     >
                       Download CV <Download className="h-4 w-4" />
                     </a>
