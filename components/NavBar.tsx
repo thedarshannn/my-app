@@ -13,8 +13,6 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
   { name: "Projects", href: "/projects" },
-  { name: "Speaking", href: "/speaking" },
-  { name: "Uses", href: "/uses" },
 ];
 
 const NavBar = () => {

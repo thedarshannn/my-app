@@ -19,12 +19,7 @@ export default function HomeCarousel() {
       <Carousel>
         {images.map((src, idx) => (
           <CarouselItem key={src}>
-            <div
-              className={
-                "relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/10 dark:ring-white/10 will-change-transform " +
-                (idx % 2 === 0 ? "-rotate-3" : "rotate-2")
-              }
-            >
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/10 dark:ring-white/10">
               <Image
                 src={src}
                 alt="Gallery image"

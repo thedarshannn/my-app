@@ -25,15 +25,6 @@ export default function Footer() {
             >
               Projects
             </Link>
-            <Link
-              href="/speaking"
-              className="hover:underline underline-offset-4"
-            >
-              Speaking
-            </Link>
-            <Link href="/uses" className="hover:underline underline-offset-4">
-              Uses
-            </Link>
           </nav>
           <p className="text-sm text-muted-foreground text-center md:text-right w-full md:w-auto">
             © {year} {siteConfig.author}. All rights reserved.
