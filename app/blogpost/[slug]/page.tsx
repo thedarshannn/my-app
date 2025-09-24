@@ -10,6 +10,7 @@ import { rehypePrettyCode } from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import gray from "gray-matter";
 import fs from "fs";
+import path from "path";
 import Onthispage from "@/components/Onthispage";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
@@ -18,7 +19,7 @@ export default async function BlogPage({
 }: {
   params: { slug: string };
 }) {
-  const filePath = `${process.cwd()}/content/${params.slug}.md`;
+  const filePath = path.join(process.cwd(), "content", `${params.slug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = gray(fileContent);
 
