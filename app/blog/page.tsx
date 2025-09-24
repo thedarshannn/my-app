@@ -52,20 +52,15 @@ export default function BlogPage() {
   return (
     <MaxWidthWrapper className="py-12">
       {/* Header aligned with content column */}
-      <div className="mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div className="hidden md:block md:col-span-3" />
-          <div className="md:col-span-9">
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              Writing on software design, company building, and the aerospace
-              industry.
-            </h1>
-            <p className="mt-4 text-muted-foreground max-w-2xl">
-              All of my long-form thoughts on programming, leadership, product
-              design, and more, collected in chronological order.
-            </p>
-          </div>
-        </div>
+      <div className="mb-12 text-center">
+        <h1 className="text-2xl md:text-5xl font-semibold leading-tight tracking-tight text-foreground">
+          Writing on software design, company building, and the aerospace
+          industry.
+        </h1>
+        <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+          All of my long-form thoughts on programming, leadership, product
+          design, and more, collected in chronological order.
+        </p>
       </div>
 
       {/* List */}
