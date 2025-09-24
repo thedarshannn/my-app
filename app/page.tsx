@@ -11,8 +11,7 @@ import {
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import HomeCarousel from "@/components/HomeCarousel";
 import profile from "@/config/profile";
-// We'll use ProjectsSection later when adding the preview
-// import ProjectsSection from "@/components/ProjectsSection";
+import ProjectsSection from "@/components/ProjectsSection";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";

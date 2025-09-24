@@ -18,7 +18,7 @@ export default async function BlogPage({
 }: {
   params: { slug: string };
 }) {
-  const filePath = `content/${params.slug}.md`;
+  const filePath = `${process.cwd()}/content/${params.slug}.md`;
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = gray(fileContent);
 
