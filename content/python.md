@@ -1,6 +1,6 @@
 ---
 title: "Python Tutorial"
-slug: "python-tutorial"
+slug: "python"
 description: "Comprehensive guide on learning Python from basics to advanced topics."
 content: "A comprehensive guide on learning Python from basics to advanced topics."
 imageUrl: "https://source.unsplash.com/800x400/?blog,web"
