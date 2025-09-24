@@ -1,13 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Github, ExternalLink, ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import projects, { type Project } from "@/config/projects";
 
 export default function ProjectsSection({
@@ -33,50 +29,90 @@ export default function ProjectsSection({
 }
 
 function ProjectCard({ project }: { project: Project }) {
+  const left = project.links?.[0];
+  const right = project.links?.[1];
   return (
-    <Card className="overflow-hidden">
-      {project.image && (
-        <div className="relative h-40 w-full">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-contain p-6"
-          />
-        </div>
-      )}
-      <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
-        {project.tags?.length ? (
-          <div className="mt-1 flex flex-wrap gap-2 text-xs text-muted-foreground">
-            {project.tags.map((t) => (
-              <span key={t} className="rounded-md border px-2 py-0.5">
-                {t}
-              </span>
-            ))}
-          </div>
-        ) : null}
+    <CardContainer className="inter-var w-full">
+      <CardBody className="group/card bg-gray-50 text-card-foreground dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border border-border rounded-2xl w-auto sm:w-[30rem] h-auto p-6">
+        <CardItem translateZ="50" className="text-xl font-semibold">
+          {project.title}
+        </CardItem>
         {project.description ? (
-          <CardDescription className="mt-2">
+          <CardItem
+            translateZ="30"
+            as="p"
+            className="mt-2 text-muted-foreground"
+          >
             {project.description}
-          </CardDescription>
+          </CardItem>
         ) : null}
-      </CardHeader>
-      {project.links?.length ? (
-        <CardFooter className="gap-3">
-          {project.links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="text-sm underline underline-offset-4 hover:no-underline"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              {l.label}
-            </Link>
-          ))}
-        </CardFooter>
-      ) : null}
-    </Card>
+        {project.image && (
+          <CardItem translateZ="80" className="relative w-full mt-4">
+            <div className="relative w-full overflow-hidden rounded-lg shadow-md aspect-[16/9]">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={false}
+              />
+            </div>
+          </CardItem>
+        )}
+        {project.tags?.length ? (
+          <CardItem translateZ="25" className="mt-4 flex flex-wrap gap-2">
+            {project.tags.map((t) => (
+              <Badge key={t} variant="secondary" className="text-xs">
+                {t}
+              </Badge>
+            ))}
+          </CardItem>
+        ) : null}
+        {(left || right) && (
+          <div className="flex justify-between items-center mt-8">
+            {left ? (
+              <CardItem translateZ={20} asChild>
+                <Link
+                  href={left.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="inline-flex items-center gap-1 text-sm"
+                  aria-label={`${left.label} – ${project.title}`}
+                >
+                  {/^github/i.test(left.label) ? (
+                    <Github className="h-4 w-4" />
+                  ) : (
+                    <ExternalLink className="h-4 w-4" />
+                  )}
+                  {left.label} <ArrowRight className="h-4 w-4" />
+                </Link>
+              </CardItem>
+            ) : (
+              <span />
+            )}
+            {right ? (
+              <CardItem translateZ={20}>
+                <Button asChild size="sm" className="rounded-xl">
+                  <Link
+                    href={right.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={`${right.label} – ${project.title}`}
+                  >
+                    {/^github/i.test(right.label) ? (
+                      <Github />
+                    ) : (
+                      <ExternalLink />
+                    )}
+                    {right.label}
+                  </Link>
+                </Button>
+              </CardItem>
+            ) : null}
+          </div>
+        )}
+      </CardBody>
+    </CardContainer>
   );
 }
