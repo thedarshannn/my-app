@@ -42,19 +42,31 @@ const profile: Profile = {
   ],
   resumePath: "/Resume.pdf",
   avatar: "/hero.jpg",
-  // TODO: Replace with exact roles and dates from your resume
+  // Work experience (shown on Home Work card)
   experience: [
     {
-      company: "Freelance",
-      role: "Full‑stack Developer",
-      start: "2023",
+      company: "Esso",
+      role: "Customer Service Attendant",
+      start: "Nov 2024",
       end: "Present",
     },
     {
-      company: "Company ABC",
-      role: "Frontend Engineer",
-      start: "2021",
-      end: "2023",
+      company: "Humber College",
+      role: "Peer Mentor",
+      start: "Aug 2024",
+      end: "Dec 2024",
+    },
+    {
+      company: "You2Tec Inc",
+      role: "Warehouse Supervisor / IT Support",
+      start: "May 2024",
+      end: "Oct 2024",
+    },
+    {
+      company: "Net Galaxy",
+      role: "Data Entry Operator",
+      start: "Jul 2021",
+      end: "Oct 2022",
     },
   ],
 };
