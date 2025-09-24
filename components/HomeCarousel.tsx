@@ -17,7 +17,7 @@ export default function HomeCarousel() {
       {/* soft gradient to separate hero from carousel on overlap */}
       <div className="pointer-events-none absolute -top-6 left-0 right-0 h-12 bg-gradient-to-b from-background to-transparent" />
       <Carousel>
-        {images.map((src, idx) => (
+        {images.map((src) => (
           <CarouselItem key={src}>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/10 dark:ring-white/10">
               <Image

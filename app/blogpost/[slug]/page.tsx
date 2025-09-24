@@ -5,7 +5,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
-import rehypeHighlight from "rehype-highlight";
+// import rehypeHighlight from "rehype-highlight";
 import { rehypePrettyCode } from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import gray from "gray-matter";
