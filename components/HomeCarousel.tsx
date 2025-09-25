@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
 
-const images = [
-  "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop",
+// Define fixed set of carousel images
+const carouselImages = [
+  "/carousel/4.JPG",
+  "/carousel/2.JPG",
+  "/carousel/7.JPG",
+  "/carousel/6.JPG",
+  "/carousel/8.JPG",
 ];
 
 export default function HomeCarousel() {
@@ -17,7 +18,7 @@ export default function HomeCarousel() {
       {/* soft gradient to separate hero from carousel on overlap */}
       <div className="pointer-events-none absolute -top-6 left-0 right-0 h-12 bg-gradient-to-b from-background to-transparent" />
       <Carousel>
-        {images.map((src) => (
+        {carouselImages.map((src: string) => (
           <CarouselItem key={src}>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-black/10 dark:ring-white/10">
               <Image
