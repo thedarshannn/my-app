@@ -1,13 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Github,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Briefcase,
-  Download,
-} from "lucide-react";
+import { Github, Linkedin, Briefcase, Download } from "lucide-react";
+import { SiMedium } from "react-icons/si";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import HomeCarousel from "@/components/HomeCarousel";
 import profile from "@/config/profile";
@@ -49,10 +43,9 @@ export default function Home() {
           <div className="mt-8 flex items-center gap-6">
             {profile.socials.map((s) => (
               <SocialLink key={s.label} href={s.href} label={s.label}>
-                {s.icon === "twitter" && <Twitter className="h-5 w-5" />}
-                {s.icon === "instagram" && <Instagram className="h-5 w-5" />}
                 {s.icon === "github" && <Github className="h-5 w-5" />}
                 {s.icon === "linkedin" && <Linkedin className="h-5 w-5" />}
+                {s.icon === "medium" && <SiMedium className="h-5 w-5" />}
               </SocialLink>
             ))}
           </div>

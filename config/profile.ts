@@ -1,7 +1,7 @@
 export type Social = {
   label: string;
   href: string;
-  icon: "twitter" | "instagram" | "github" | "linkedin" | "mail";
+  icon: "github" | "linkedin" | "mail" | "medium";
 };
 
 export type Profile = {
@@ -32,13 +32,24 @@ const profile: Profile = {
     "I design and build performant web apps, from product thinking to clean, scalable code.",
     "Previously shipped projects across startups and client work; I care about developer experience and robust UX.",
   ],
-  email: "spencer@planetaria.tech",
+  email: "mr.darshan2919@gmail.com",
   location: "",
   socials: [
-    { label: "Follow on X", href: "#", icon: "twitter" },
-    { label: "Follow on Instagram", href: "#", icon: "instagram" },
-    { label: "Follow on GitHub", href: "#", icon: "github" },
-    { label: "Follow on LinkedIn", href: "#", icon: "linkedin" },
+    {
+      label: "Follow on GitHub",
+      href: "https://github.com/thedarshannn",
+      icon: "github",
+    },
+    {
+      label: "Follow on LinkedIn",
+      href: "https://www.linkedin.com/in/darshan-prajapati29/",
+      icon: "linkedin",
+    },
+    {
+      label: "Follow on Medium",
+      href: "https://medium.com/@thedarshannn",
+      icon: "medium",
+    },
   ],
   resumePath: "/Resume.pdf",
   avatar: "/hero.jpg",

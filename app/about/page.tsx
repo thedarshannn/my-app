@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { Github, Instagram, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { SiMedium } from "react-icons/si";
 import profile from "@/config/profile";
 
 export default function AboutPage() {
@@ -40,14 +41,11 @@ export default function AboutPage() {
                 {profile.socials.map((s) => (
                   <li key={s.label}>
                     <AboutLink href={s.href} label={s.label}>
-                      {s.icon === "twitter" && <Twitter className="h-4 w-4" />}
-                      {s.icon === "instagram" && (
-                        <Instagram className="h-4 w-4" />
-                      )}
                       {s.icon === "github" && <Github className="h-4 w-4" />}
                       {s.icon === "linkedin" && (
                         <Linkedin className="h-4 w-4" />
                       )}
+                      {s.icon === "medium" && <SiMedium className="h-4 w-4" />}
                       <span className="ml-2">{s.label}</span>
                     </AboutLink>
                   </li>
