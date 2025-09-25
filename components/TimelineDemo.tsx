@@ -152,3 +152,5 @@ export function TimelineDemo() {
     </div>
   );
 }
+
+export default TimelineDemo;
