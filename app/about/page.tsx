@@ -27,7 +27,7 @@ export default function AboutPage() {
             <div className="space-y-8">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl ring-1 ring-black/10 dark:ring-white/10 -rotate-2">
                 <Image
-                  src={profile.avatar || "/hero.jpg"}
+                  src={profile.avatar || "/hero.JPG"}
                   alt={`${profile.name} portrait`}
                   fill
                   sizes="(min-width: 1024px) 30vw, 80vw"

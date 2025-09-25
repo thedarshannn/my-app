@@ -26,7 +26,7 @@ export default function Home() {
           {/* Avatar */}
           <div className="mb-8">
             <Image
-              src={profile.avatar || "/hero.jpg"}
+              src={profile.avatar || "/hero.JPG"}
               alt={`${profile.name} avatar`}
               width={80}
               height={80}
