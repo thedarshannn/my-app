@@ -3,6 +3,21 @@ import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { SiMedium } from "react-icons/si";
+import {
+  SiSpring,
+  SiTypescript,
+  SiAndroidstudio,
+  SiGnubash,
+} from "react-icons/si";
+import {
+  FaJava,
+  FaReact,
+  FaNetworkWired,
+  FaGitAlt,
+  FaPython,
+} from "react-icons/fa";
+import { VscAzure } from "react-icons/vsc";
+import { IoHardwareChip } from "react-icons/io5";
 import profile from "@/config/profile";
 
 export default function AboutPage() {
@@ -20,6 +35,24 @@ export default function AboutPage() {
               {profile.bio.map((para) => (
                 <p key={para}>{para}</p>
               ))}
+            </div>
+
+            {/* Skills section */}
+            <div className="mt-12">
+              <h2 className="text-2xl font-semibold mb-6">Skills</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <SkillBadge icon={<FaJava />} label="Java" />
+                <SkillBadge icon={<SiSpring />} label="Spring Boot" />
+                <SkillBadge icon={<SiTypescript />} label="TypeScript" />
+                <SkillBadge icon={<FaReact />} label="React" />
+                <SkillBadge icon={<SiAndroidstudio />} label="Android Studio" />
+                <SkillBadge icon={<IoHardwareChip />} label="IT Support" />
+                <SkillBadge icon={<FaNetworkWired />} label="Networking" />
+                <SkillBadge icon={<VscAzure />} label="Azure" />
+                <SkillBadge icon={<FaGitAlt />} label="Git" />
+                <SkillBadge icon={<FaPython />} label="Python" />
+                <SkillBadge icon={<SiGnubash />} label="Bash" />
+              </div>
             </div>
           </div>
 
@@ -88,5 +121,14 @@ function AboutLink({
     >
       {children}
     </Link>
+  );
+}
+
+function SkillBadge({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <div className="flex items-center gap-2 px-4 py-3 rounded-lg bg-accent/50 hover:bg-accent transition-colors">
+      <div className="text-xl text-primary">{icon}</div>
+      <span className="text-sm font-medium">{label}</span>
+    </div>
   );
 }
