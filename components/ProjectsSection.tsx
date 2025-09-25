@@ -7,7 +7,6 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import projects, { type Project } from "@/config/projects";
 
 export default function ProjectsSection({
-  title = "Projects",
   limit,
 }: {
   title?: string;
@@ -16,9 +15,6 @@ export default function ProjectsSection({
   const items = typeof limit === "number" ? projects.slice(0, limit) : projects;
   return (
     <section>
-      <div className="flex items-end justify-between">
-        <h2 className="text-2xl md:text-3xl font-semibold">{title}</h2>
-      </div>
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((p) => (
           <ProjectCard key={p.title} project={p} />

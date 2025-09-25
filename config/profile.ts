@@ -26,11 +26,17 @@ export type Profile = {
 const profile: Profile = {
   name: "Darshan Prajapati",
   title: "Software Engineer",
-  slogan: "Building reliable, delightful products with code and curiosity.",
+  slogan: "Hi, I'm Darshan 👋 ",
   bio: [
-    "Full‑stack developer specializing in React, Next.js, and TypeScript.",
-    "I design and build performant web apps, from product thinking to clean, scalable code.",
-    "Previously shipped projects across startups and client work; I care about developer experience and robust UX.",
+    "I'm an international student from India, now living in Canada. I recently graduated from Humber College in Computer Engineering Technology — and trust me, I know all about those late nights, coffee-fueled projects, and college grind life! ☕💻",
+
+    "Right now, I'm leveling up my skills with IT certifications while also exploring entry-level opportunities in software development and IT support. I'm super curious, always learning, and love experimenting with new tech.",
+
+    "One of my favorite projects was Smart Sprout, an IoT-based smart home garden system. I led the development team and delivered both the hardware system and Android app — all up and running smoothly in just 8 months. 🌱",
+
+    "I've also built a fitness assistant using AI & computer vision and a greenhouse controller with Raspberry Pi, because I enjoy blending hardware + software to create useful, real-world solutions.",
+
+    "Always up for a challenge, always building something new. 🚀",
   ],
   email: "mr.darshan2919@gmail.com",
   location: "",

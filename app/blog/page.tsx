@@ -54,12 +54,12 @@ export default function BlogPage() {
       {/* Header aligned with content column */}
       <div className="mb-12 text-center">
         <h1 className="text-2xl md:text-5xl font-semibold leading-tight tracking-tight text-foreground">
-          Writing on software design, company building, and the aerospace
-          industry.
+          A grad’s journal on coding, tinkering, <br /> and figuring things out
+          in tech.
         </h1>
         <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-          All of my long-form thoughts on programming, leadership, product
-          design, and more, collected in chronological order.
+          All of my thoughts on coding, projects, and experimenting with tech —
+          collected along the way as I keep learning and building.
         </p>
       </div>
 

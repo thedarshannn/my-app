@@ -20,7 +20,7 @@ export default function Home() {
           {/* Avatar */}
           <div className="mb-8">
             <Image
-              src={profile.avatar || "/hero.JPG"}
+              src={profile.avatar || "/home.JPG"}
               alt={`${profile.name} avatar`}
               width={80}
               height={80}
@@ -31,12 +31,12 @@ export default function Home() {
 
           {/* Headline from profile */}
           <h1 className="max-w-4xl text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl">
-            {profile.slogan}
+            Building reliable, delightful products with code and curiosity.
           </h1>
 
           {/* Subtext from profile.bio[0] */}
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            {profile.bio[0]}
+            Fresh grad, curious builder, and lifelong learner 👨🏼‍💻.
           </p>
 
           {/* Social row */}
