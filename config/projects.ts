@@ -21,25 +21,15 @@ const projects: Project[] = [
       "Firebase",
     ],
     links: [
-      { label: "GitHub", href: "#" },
-      { label: "Demo", href: "#" },
+      {
+        label: "GitHub",
+        href: "https://github.com/thedarshannn/SmartHomeGardenSys",
+      },
+      {
+        label: "Demo",
+        href: "https://drive.google.com/file/d/1oMOYAk3LVeW9KwkhEt3rDPT0TIbobifq/view?usp=sharing",
+      },
     ],
-  },
-  {
-    title: "Virtual Fitness Assistant",
-    description:
-      "Posture detection and rep counting assistant using OpenCV/MediaPipe with AI voice commands; improved workout tracking accuracy by ~35% (e.g., squats, curls).",
-    image: "/globe.svg",
-    tags: ["Python", "OpenCV", "MediaPipe", "Raspberry Pi", "Google AI"],
-    links: [],
-  },
-  {
-    title: "Greenhouse Controller",
-    description:
-      "C program on Raspberry Pi to read and log environmental data for local greenhouse monitoring, focused on hardware integration and debugging.",
-    image: "/next.svg",
-    tags: ["C", "Raspberry Pi", "Vim", "WinSCP"],
-    links: [{ label: "GitHub", href: "#" }],
   },
 ];
 
