@@ -4,157 +4,138 @@ import { Timeline } from "@/components/ui/timeline";
 export function TimelineDemo() {
   const data = [
     {
-      title: "2024",
+      title: "Ongoing",
       content: (
-        <div key="2024-content">
+        <div key="certification">
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
+            📚 Currently working on my Google IT Support Certification,
+            sharpening my technical troubleshooting and IT fundamentals skills.
+            Always learning, always improving.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://assets.aceternity.com/templates/startup-1.webp"
-              alt="startup template"
+              src="/journey/bits-net.jpg"
+              alt="Google IT Certification"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
             />
             <img
-              src="https://assets.aceternity.com/templates/startup-2.webp"
-              alt="startup template"
+              src="/journey/os.jpg"
+              alt="Certification progress"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-3.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-4.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
             />
           </div>
         </div>
       ),
     },
     {
-      title: "Early 2023",
+      title: "Jan 2025",
       content: (
-        <div key="2023-content">
+        <div key="convocation">
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
-          </p>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more example of beautiful designs I built.
+            🏆 Convocation day, January 2025: the perfect ending to my Humber
+            College chapter and the beginning of a new one.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
+              src="/journey/grad.jpg"
+              alt="Convocation Ceremony"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
             />
             <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
+              src="/journey/7.jpg"
+              alt="Graduation celebration"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
             />
           </div>
         </div>
       ),
     },
     {
-      title: "Changelog",
+      title: "Apr 2025",
       content: (
-        <div key="changelog-content">
+        <div key="smart-sprout">
+          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+            🌱 Led the development of Smart Sprout, an IoT-based home garden
+            system. Managed both the hardware integration and Android app,
+            delivering a smooth end-to-end solution in April 2025.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/journey/5.jpg"
+              alt="Smart Sprout prototype"
+              width={500}
+              height={500}
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
+            />
+            <img
+              src="/journey/10.jpg"
+              alt="Smart Sprout app"
+              width={500}
+              height={500}
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
+            />
+            <img
+              src="/journey/9.jpg"
+              alt="Smart Sprout hardware"
+              width={500}
+              height={500}
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
+            />
+            <img
+              src="/journey/8.jpg"
+              alt="Smart Sprout sensors"
+              width={500}
+              height={500}
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Jan 2023",
+      content: (
+        <div key="journey-to-canada">
           <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Deployed 5 new components on Aceternity today
+            ✈️ Landed in Canada — full of excitement, challenges, and new
+            opportunities to look forward to.
           </p>
-          <div className="mb-8">
-            <div
-              key="item-1"
-              className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300"
-            >
-              ✅ Card grid component
-            </div>
-            <div
-              key="item-2"
-              className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300"
-            >
-              ✅ Startup template Aceternity
-            </div>
-            <div
-              key="item-3"
-              className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300"
-            >
-              ✅ Random file upload lol
-            </div>
-            <div
-              key="item-4"
-              className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300"
-            >
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div
-              key="item-5"
-              className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300"
-            >
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
-          </div>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="/journey/1.jpg"
-              alt="hero template"
+              alt="Flight to Canada"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
             />
             <img
               src="/journey/2.jpg"
-              alt="feature template"
+              alt="BAPS Mandir"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
             />
             <img
               src="/journey/3.jpg"
-              alt="bento template"
+              alt="College Life"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
             />
             <img
               src="/journey/4.jpg"
-              alt="cards template"
+              alt="Settling in Canada"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="h-20 w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60"
             />
           </div>
         </div>
