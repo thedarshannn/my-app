@@ -5,7 +5,7 @@ import TimelineDemo from "@/components/TimelineDemo";
 export default function JourneyPage() {
   return (
     <main>
-      <MaxWidthWrapper className="py-12">
+      <MaxWidthWrapper className="py-5">
         {/* Header aligned with content column */}
         <div className="mb-12 text-center">
           <h1 className="text-2xl md:text-5xl font-semibold leading-tight tracking-tight text-foreground">
