@@ -5,7 +5,6 @@ import { SiMedium } from "react-icons/si";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import HomeCarousel from "@/components/HomeCarousel";
 import profile from "@/config/profile";
-import ProjectsSection from "@/components/ProjectsSection";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";

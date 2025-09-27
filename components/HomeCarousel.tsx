@@ -9,7 +9,7 @@ const carouselImages = [
   "/carousel/2.JPG",
   "/carousel/7.JPG",
   "/carousel/6.JPG",
-  "/carousel/8.JPG",
+  "/carousel/8.jpg",
 ];
 
 export default function HomeCarousel() {
